@@ -1,0 +1,13 @@
+.logoHolder{
+    max-width: 600px;
+    margin: 50px auto 0 auto;
+    display: flex;
+}
+
+.viterbiLogo{
+    max-width: 44%;
+}
+
+.priceLogo{
+    max-width: 56%;
+}
