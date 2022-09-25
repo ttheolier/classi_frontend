@@ -1,15 +1,7 @@
 import React from 'react';
 import {AppBar, Box, createTheme, Drawer, IconButton, ThemeProvider, Toolbar, Typography} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-
-
-const uscTheme = createTheme({
-    palette: {
-        primary: {
-            main: '#990000',
-        },
-    },
-});
+import uscTheme from "./theme";
 
 function Header() {
 

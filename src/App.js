@@ -2,15 +2,26 @@ import './App.css';
 import Header from "./components/Header";
 import Logos from "./components/Logos";
 import Login from "./components/Login";
+import Register from "./components/Register";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
 
     return (
-        <div>
+        /*<div>
             <Header/>
             <Logos/>
             <Login/>
-        </div>
+            <Register/>
+        </div>*/
+        <BrowserRouter>
+            <Header/>
+            <Logos/>
+            <Routes>
+                <Route exact path='/' element={<Login/>}/>
+                <Route exact path='/register' element={<Register/>}/>
+            </Routes>
+        </BrowserRouter>
     );
 }
 

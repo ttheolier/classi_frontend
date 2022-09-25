@@ -1,12 +1,14 @@
-import React from 'react';
+import {useState} from 'react';
 import './Login.css';
-import {Button, createTheme, TextField, ThemeProvider} from "@mui/material";
+import {Button, TextField, ThemeProvider} from "@mui/material";
 import uscTheme from "./theme";
 
 function Login() {
 
-    const [email, setEmail] = React.useState('');
-    const [password, setPassword] = React.useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirm, setConfirm] = useState('');
+
     const textStyle = {
         width:300,
         '& .MuiOutlinedInput-notchedOutline': {
@@ -25,9 +27,11 @@ function Login() {
         },
     }
 
-    const SignIn = (e) => {
+
+    const Register = (e)=>{
         console.log(email);
-        console.log(password)
+        console.log(password);
+        console.log(confirm)
     }
 
     return (
@@ -42,7 +46,7 @@ function Login() {
                     color:  '#000',
                 }}
             >
-                Sign in
+                Register
             </h2>
             <p
                 style={{
@@ -55,7 +59,7 @@ function Login() {
                     color: '#707183',
                 }}
             >
-                Enter your credentials to continue.
+                Create an account to continue.
             </p>
             <TextField
                 onChange={(e) => setEmail(e.target.value)}
@@ -78,6 +82,17 @@ function Login() {
                 //error={isPasswordInvalid}
                 //helperText={isPasswordInvalid ? 'One Upper, Lower, and Number, 8 chars.' : ''}
             />
+            <TextField
+                onChange={(e) => setPassword(e.target.value)}
+                id='confirm-password'
+                sx={textStyle}
+                label='Confirm Password'
+                variant='outlined'
+                type='password'
+                value={confirm}
+                //error={isPasswordInvalid}
+                //helperText={isPasswordInvalid ? 'One Upper, Lower, and Number, 8 chars.' : ''}
+            />
             <ThemeProvider theme={uscTheme}>
                 <Button
                     type='submit'
@@ -89,15 +104,15 @@ function Login() {
                     }}
                     size='large'
                     variant='contained'
-                    onClick={SignIn}
+                    onClick={Register}
                 >
-                    Sign in
+                    Register
                 </Button>
             </ThemeProvider>
             <div className={'signUpPrompt'}>
-                <p className={''}>Don't Have an Account?</p>
-                <a className={'loginLink'} href='/register'>
-                    Register
+                <p className={''}>Already Have an Account?</p>
+                <a className={'loginLink'} href='/'>
+                    Sign in
                 </a>
             </div>
         </div>

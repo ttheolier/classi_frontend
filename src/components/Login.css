@@ -4,3 +4,15 @@
     display: flex;
     flex-direction: column;
 }
+
+.signUpPrompt{
+    margin:15px auto 0 auto;
+    display: flex;
+    font-size: 14px;
+}
+
+.loginLink{
+    margin: 1em 0 0 5px;
+    text-decoration: none;
+    color: blue;
+}
